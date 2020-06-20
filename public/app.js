@@ -186,8 +186,12 @@ var IssueList = /*#__PURE__*/function (_React$Component3) {
 
     _this2.createIssue = _this2.createIssue.bind(_assertThisInitialized(_this2));
     return _this2;
+<<<<<<< HEAD
   } // lifecycle method
 
+=======
+  }
+>>>>>>> week2
 
   _createClass(IssueList, [{
     key: "componentDidMount",

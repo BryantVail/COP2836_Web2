@@ -1,0 +1,15 @@
+npm install --save-dev @babel/core@7 @babel/cli@7
+npm install --save-dev @babel/preset-react@7
+npx babel public/src --presets @babel/react --out-dir public
+//remove presets 
+npx babel src --out-dir public
+
+// browser compatibility script
+npm install --save-dev @babel/preset-env@7
+
+// polyfill
+<script src="https://unpkg.com/@babel/polyfill@7/dist/polyfill.min.js/"></script>
+
+// nodemon
+"nodemon -w server server/server.js",
+
