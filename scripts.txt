@@ -10,6 +10,50 @@ npm install --save-dev @babel/preset-env@7
 // polyfill
 <script src="https://unpkg.com/@babel/polyfill@7/dist/polyfill.min.js/"></script>
 
+<script src="https://unpkg.com/whatwg-fetch@3.0.0/dist/fetch.umd.js"></script>
+
 // nodemon
 "nodemon -w server server/server.js",
+
+npm install graphql@0 apollo-server-express@2
+
+
+//
+// Mongo
+//
+
+> show dbs 
+> use {newDbName}
+
+> db.employees.insertOne({object});
+> db.employees.find({'field': 'value'});
+> db.employees.find({age: {$gte: 30}});
+
+> db.employees.update({condition}, {$set: {newValue}});
+
+> db.employees.deleteOne({condition});
+
+> db.employees.aggregate([
+  {$group: {_id: null, average_age: { $avg: '$age'}}}
+]); 
+// { "_id" : null, "average_age": 41}
+
+> db.employees.remove({}); //remove all
+
+C:\>"\Program Files\MongoDB\Server\4.2\bin\mongo.exe" cop2836 --eval "db.employees.remove({});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
