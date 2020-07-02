@@ -4,7 +4,8 @@ const { ApolloServer, UserInputError } = require('apollo-server-express');
 const { GraphQLScalarType } = require('graphql');
 const { Kind, parseValue } = require('graphql/language');
 const { MongoClient } = require('mongodb');
-const url = 'mongodb://localhost/cop2836';
+const url = process.env.DB_URL || 'mongodb://localhost/cop2836';
+const port = process.env.API_SERVER_PORT || 3001;
 let db;
 
 const issues = [
@@ -50,6 +51,8 @@ function validateIssue(issue) {
 
 //fileSystem object
 const fs = require('fs');
+
+require('dotenv').config();
 
 let aboutMessage = "Issue Tracker API v1.0";
 
@@ -101,8 +104,13 @@ async function issueAdd(_, { issue }) {
   return savedIssue;
 }
 
+
+//
+//Server
+//
+
 const server = new ApolloServer({
-  typeDefs: fs.readFileSync("./server/schema.graphql", "utf-8"),
+  typeDefs: fs.readFileSync("./schema.graphql", "utf-8"),
   resolvers,
   formatErrors: error => {
     console.log(error);
@@ -113,8 +121,6 @@ const server = new ApolloServer({
 //INITIATE EXPRESS()
 const app = express();
 
-app.use(express.static('public'));
-
 //APPLY GRAPHQL AS Middleware
 server.applyMiddleware({ app, path: '/graphql' });
 
@@ -123,10 +129,9 @@ server.applyMiddleware({ app, path: '/graphql' });
 (async function () {
   try {
     await connectToDb();
-    //no admin rights needed for port 3000
-    const runningPort = 3001;
-    app.listen(runningPort, function () {
-      console.log(`app started on port ${runningPort}`);
+    //no admin rights needed for port 3000 or 3001
+    app.listen(port, function () {
+      console.log(`api server started on port ${port}`);
     });
 
   } catch (err) {

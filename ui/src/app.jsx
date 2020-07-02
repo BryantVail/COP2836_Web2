@@ -110,7 +110,7 @@ class IssueAdd extends React.Component {
 
 async function graphQLFetch(query, variables = {}) {
   try {
-    const response = await fetch("/graphql", {
+    const response = await fetch(window.ENV.UI_API_ENDPOINT, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ query, variables }),

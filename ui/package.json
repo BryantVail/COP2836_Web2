@@ -2,13 +2,11 @@
   "name": "cop2836_web2",
   "version": "1.0.0",
   "description": "cop2836_web2",
-  "main": "exampleFile.js",
+  "main": "server.js",
   "dependencies": {
-    "apollo-server-express": "^2.15.0",
     "babel-regenerator-runtime": "^6.5.0",
+    "dotenv": "^6.2.0",
     "express": "^4.17.1",
-    "graphql": "^14.6.0",
-    "mongodb": "^3.5.9",
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
@@ -19,7 +17,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -w server -e js,graphql server/server.js",
+    "start": "nodemon -w .env server.js",
     "compile": "npx babel src --out-dir public",
     "watch": "npx babel src --out-dir public --watch --verbose",
     "lint": "eslint"

@@ -164,7 +164,7 @@ function _graphQLFetch() {
             variables = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : {};
             _context3.prev = 1;
             _context3.next = 4;
-            return fetch("/graphql", {
+            return fetch(window.ENV.UI_API_ENDPOINT, {
               method: "POST",
               headers: {
                 "content-type": "application/json"

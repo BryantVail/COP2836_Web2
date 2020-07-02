@@ -2,7 +2,7 @@
 
 const { MongoClient } = require('mongodb');
 
-const url = "mongodb://localhost/cop2836";
+const url = process.env.DB_URL || 'mongodb://localhost/cop2836';
 
 function testWithCallbacks(callbackFunction) {
   console.log(`\n ----TestWithCallbacks ---`);
@@ -12,7 +12,7 @@ function testWithCallbacks(callbackFunction) {
       callbackFunction(err);
       return;
     }
-    console.log("Connected to MongoDB");
+    console.log("Connected to MongoDB", url);
 
     //init db
     const db = client.db();
@@ -59,7 +59,7 @@ async function testWithAsync() {
 
   try {
     await client.connect();
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB', url);
 
     const db = client.db();
     const collection = db.collection('employees');

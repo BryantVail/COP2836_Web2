@@ -1,0 +1,38 @@
+{
+  "name": "cop2836_web2",
+  "version": "1.0.0",
+  "description": "cop2836_web2",
+  "main": "server.js",
+  "dependencies": {
+    "apollo-server-express": "^2.15.0",
+    "babel-regenerator-runtime": "^6.5.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0",
+    "mongodb": "^3.5.9",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -e js,graphql -w . -w .env server.js",
+    "compile": "npx babel src --out-dir public",
+    "watch": "npx babel src --out-dir public --watch --verbose",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryantVail/COP2836_Web2.git"
+  },
+  "author": "bryant vail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BryantVail/COP2836_Web2/issues"
+  },
+  "homepage": "https://github.com/BryantVail/COP2836_Web2#readme"
+}
