@@ -48,10 +48,16 @@ npm install --save-dev eslint@5 eslint-plugin-import@2
 npm install --save-dev eslint-config-airbnb-base@13
 
 
+-----------------------------
+7/7/2020, 1:30am
 
+./root/ui> npx webpack public/App.js --output public/app.bundle.js
 
+//dev mode
+./root/ui> npx webpack public/App.js --output public/app.bundle.js --mode development
 
-
+//webpack w/babel
+npm install --save-dev babel-loader@8
 
 
 

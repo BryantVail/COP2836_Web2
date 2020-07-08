@@ -1,37 +1,31 @@
 /* eslint "react/react-in-jsx-scopt": "off" */
 /* globals React ReactDOM */
 /* eslint "react/jsx-no-undef": "off" */
-/* eslint "no-alert": "off" */
 
-//app.jsx
+// app.jsx
 
-const dateRegex = new RegExp("^\\d\\d\\d\\d-\\d\\d-\\d\\d");
-
-function jsonDateReviver(key, value) {
-  if (dateRegex.test(value)) return new Date(value);
-  return value;
-}
+import graphQLFetch from "./graphQLFetch.js";
 
 // eslint-disable-next-line react/prefer-stateless-function
 class IssueFilter extends React.Component {
   render() {
-    return <div>This is a placeholder for the IssueFilter</div>;
+    return <div>"This is a placeholder for the IssueFilter"</div>;
   }
 }
 
 function IssueRow({ issue }) {
   // reading from the component's properties
-  const issue = props.issue;
+  const issueLocal = issue;
   return (
     <tr>
-      <td>{issue.id}</td>
+      <td>{issueLocal.id}</td>
 
-      <td>{issue.status}</td>
-      <td>{issue.owner}</td>
-      <td>{issue.effort}</td>
-      <td>{issue.created.toDateString()}</td>
-      <td>{issue.due ? issue.due.toDateString() : ""}</td>
-      <td>{issue.title}</td>
+      <td>{issueLocal.status}</td>
+      <td>{issueLocal.owner}</td>
+      <td>{issueLocal.effort}</td>
+      <td>{issueLocal.created.toDateString()}</td>
+      <td>{issueLocal.due ? issueLocal.due.toDateString() : ""}</td>
+      <td>{issueLocal.title}</td>
     </tr>
   );
 }
@@ -42,8 +36,8 @@ function IssueRow({ issue }) {
 //   }
 // }
 
-function IssueTable({ issue }) {
-  //issues passed in from the 'IssuesList' as a prop
+function IssueTable({ issues }) {
+  // issues passed in from the 'IssuesList' as a prop
   // > map(issue => 'as' <IssueRow issue={issue} />)
   const issueRows = issues.map((issue) => {
     return <IssueRow key={issue.id} issue={issue} />;
@@ -74,7 +68,7 @@ function IssueTable({ issue }) {
 
 class IssueAdd extends React.Component {
   constructor() {
-    //constructor from React.Component
+    // constructor from React.Component
     super();
 
     // setTimeout(() => {
@@ -101,7 +95,7 @@ class IssueAdd extends React.Component {
     const { createIssue } = this.props;
     createIssue(issue);
 
-    //clear form
+    // clear form
     form.owner.value = "";
     form.title.value = "";
   }
@@ -117,46 +111,17 @@ class IssueAdd extends React.Component {
   }
 }
 
-async function graphQLFetch(query, variables = {}) {
-  try {
-    const response = await fetch(window.ENV.UI_API_ENDPOINT, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ query, variables }),
-    });
-
-    const body = await response.text();
-    const result = JSON.parse(body, jsonDateReviver);
-
-    if (result.errors) {
-      const error = result.errors[0];
-      if (error.extensions.code == "BAD_USER_INPUT") {
-        const details = error.extensions.exception.errors.join("\n");
-        alert(`${error.message}: \n${details}`);
-      } else {
-        alert(`${error.extensions.code}: ${error.message}`);
-      }
-    }
-    //return
-    return result.data;
-
-    // catch
-  } catch (err) {
-    alert(`error in sending data to server: ${err.message}`);
-    return null;
-  }
-}
-
+// IssueList
 class IssueList extends React.Component {
   constructor() {
     super(); // calls constructor of React.Component
 
-    //constructor is the only place where state can directly
+    // constructor is the only place where state can directly
     // > be set on the entity through 'this.state'
 
     this.state = { issues: [] };
 
-    //createIssue binding to 'this'; when fn is called => 'this' will refer to
+    // createIssue binding to 'this'; when fn is called => 'this' will refer to
     // > IssueList, otherwise the 'lexical scope' will refer to the function caller
     this.createIssue = this.createIssue.bind(this);
   }
@@ -166,6 +131,7 @@ class IssueList extends React.Component {
     this.loadData();
   }
 
+  // eslint-disable-next-line async
   async loadData() {
     const query = `
       query{
@@ -195,7 +161,7 @@ class IssueList extends React.Component {
   }
 
   render() {
-    const {issues} = this.state;
+    const { issues } = this.state;
     return (
       <React.Fragment>
         <h1>Issue Tracker</h1>
@@ -210,7 +176,7 @@ class IssueList extends React.Component {
   }
 }
 
-//create instance of helloWorld
+// create instance of helloWorld
 const element = <IssueList />;
 
 // pass in instance of helloWorld as 'element'

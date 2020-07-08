@@ -3,7 +3,31 @@
   "env": {
     "browser": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "classes": true,
+      "modules": true
+    }
+  },
   "rules": {
-    "react/prop-types": "off"
+    "import/extensions": ["error", "always", { "ignorePackages": true }],
+    "react/prop-types": "off",
+
+    "comma-dangle": "off",
+    "consistent-return": "off",
+    "eqeqeq": "off",
+    "import/newline-after-import": "off",
+    "linebreak-style": "off",
+    "no-multiple-empty-lines": "off",
+    "no-param-reassign": "warn",
+    "no-shadow": "warn",
+    "no-use-before-define": "warn",
+    "object-curly-spacing": "warn",
+    "prefer-arrow-callback": "off",
+    "quotes": "off",
+    "semi": "error"
   }
 }

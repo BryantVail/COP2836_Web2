@@ -1,4 +1,6 @@
-//server.js
+/* eslint linebreak-style: off */
+
+// server.js
 
 require('dotenv').config();
 
