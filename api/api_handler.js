@@ -3,14 +3,14 @@
 const fs = require('fs');
 require('dotenv').config();
 const { ApolloServer } = require('apollo-server-express');
-const GraphQLDate = require('./graphql_date.js');
+const issue = require('./issue.js');
 const about = require('./about.js');
-const issue = require('./issue');
+const GraphQLDate = require('./graphql_date.js');
 
 
 const resolvers = {
   Query: {
-    about: () => about.aboutMessage,
+    about: () => about.getMessage,
     issueList: issue.list,
   },
   Mutation: {

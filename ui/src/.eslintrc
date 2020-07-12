@@ -1,7 +1,9 @@
 {
   "extends": "airbnb-base",
   "env": {
-    "browser": true
+    "browser": true,
+    "commonjs": true,
+    "es6": true
   },
   "parserOptions": {
     "ecmaVersion": 2017,
@@ -16,14 +18,17 @@
     "import/extensions": ["error", "always", { "ignorePackages": true }],
     "react/prop-types": "off",
 
+    "arrow-body-style": "off",
     "comma-dangle": "off",
     "consistent-return": "off",
     "eqeqeq": "off",
     "import/newline-after-import": "off",
     "linebreak-style": "off",
+    "max-len": "off",
     "no-multiple-empty-lines": "off",
     "no-param-reassign": "warn",
     "no-shadow": "warn",
+    "no-unused-vars": "warn",
     "no-use-before-define": "warn",
     "object-curly-spacing": "warn",
     "prefer-arrow-callback": "off",

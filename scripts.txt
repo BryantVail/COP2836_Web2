@@ -59,6 +59,14 @@ npm install --save-dev eslint-config-airbnb-base@13
 //webpack w/babel
 npm install --save-dev babel-loader@8
 
+// react replace cdn references
+npm install react@16 react-dom@16
+
+npm install prop-types@15
+
+npm install whatwg-fetch@3
+
+npm install babel-polyfill@6
 
 
 

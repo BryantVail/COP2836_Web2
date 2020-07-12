@@ -26,7 +26,7 @@
     "start": "nodemon -e js,graphql -w . -w .env server.js",
     "compile": "npx babel src --out-dir public",
     "watch": "npx babel src --out-dir public --watch --verbose",
-    "lint": "eslint ."
+    "lint": "eslint . --ext js,jsx --ignore-pattern public"
   },
   "repository": {
     "type": "git",
