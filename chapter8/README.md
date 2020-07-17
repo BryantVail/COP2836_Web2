@@ -1,2 +1,0 @@
-# COP2836_Web2_Summer2020
- COP2836_Web2_Summer2020

@@ -6,10 +6,14 @@ import ReactDOM from "react-dom";
 // app.jsx
 
 // eslint-disable-next-line no-unused-vars
-import IssueList from "./IssueList.jsx";
+import Page from "./Page.jsx";
 
 // create instance of helloWorld
-const element = <IssueList />;
+const element = (
+  <Router>
+    <Page />
+  </Router>
+);
 
 // pass in instance of helloWorld as 'element'
 ReactDOM.render(element, document.querySelector("#contents"));
