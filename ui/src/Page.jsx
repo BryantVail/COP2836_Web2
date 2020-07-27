@@ -12,3 +12,12 @@ function NavBar() {
     </nav>
   );
 }
+
+export default function Page() {
+  return (
+    <div>
+      <NavBar />
+      <Contents />
+    </div>
+  );
+}

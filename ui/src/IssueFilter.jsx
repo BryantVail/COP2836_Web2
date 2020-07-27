@@ -5,6 +5,14 @@ import React from "react";
 export default class IssueFilter extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   render() {
-    return <div>"This is a placeholder for the IssueFilter"</div>;
+    return (
+      <div>
+        <a href="/#/issues">All Issues</a>
+        {` | `}
+        <a href="/#/issues?status=New">New Issues</a>
+        {` | `}
+        <a href="/#/issues?status=Assigned">Assigned Issues</a>
+      </div>
+    );
   }
 }

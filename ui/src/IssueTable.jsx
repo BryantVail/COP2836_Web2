@@ -14,6 +14,9 @@ function IssueRow({ issue }) {
       <td>{issue.created.toDateString()}</td>
       <td>{issue.due ? issue.due.toDateString() : ""}</td>
       <td>{issue.title}</td>
+      <td>
+        <a href={`/#/edit/${issue.id}`}>Edit</a>
+      </td>
     </tr>
   );
 }
@@ -35,6 +38,7 @@ export default function IssueTable({ issues }) {
           <th>Created</th>
           <th>Due</th>
           <th>Title</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>{issueRows}</tbody>

@@ -1,8 +1,9 @@
 import React from "react";
+import URLSearchParams from "url-search-params";
+import graphQLFetch from "./graphQLFetch.js";
 import IssueFilter from "./IssueFilter.jsx";
 import IssueTable from "./IssueTable.jsx";
 import IssueAdd from "./IssueAdd.jsx";
-import graphQLFetch from "./graphQLFetch.js";
 
 export default class IssueList extends React.Component {
   constructor() {
@@ -16,16 +17,44 @@ export default class IssueList extends React.Component {
     this.loadData();
   }
 
+  // lifecycle method
+  componentDidUpdate(prevProps) {
+    const {
+      location: { search: prevSearch },
+    } = prevProps;
+
+    const {
+      location: { search },
+    } = this.props;
+
+    if (prevSearch !== search) {
+      this.loadData();
+    }
+  }
+
   // eslint-disable-next-line class-methods-use-this
   async loadData() {
+    const {
+      location: { search },
+    } = this.props;
+
+    const params = new URLSearchParams(search);
+
+    const vars = {};
+
+    // get the value of 'status' from the params query
+    if (params.get("status")) {
+      vars.status = params.get("status"); // add 'status' param to 'vars'
+    }
+
     // eslint-disable-next-line no-unused-vars
-    const query = `query {
-      issueList{
-        id title created status owner
+    const query = `query issueList($status: StatusType) {
+      issueList (status: $status){
+        id title status owner created effort due 
       }
     }`;
 
-    const data = await graphQLFetch(query);
+    const data = await graphQLFetch(query, vars);
     if (data) {
       // get 'issueList' from data source via graphQLFetch(query)
       // > setState({})

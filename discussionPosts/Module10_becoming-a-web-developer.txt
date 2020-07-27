@@ -1,0 +1,96 @@
+
+"https://www.freecodecamp.org/news/my-journey-to-becoming-a-web-developer-from-scratch-without-a-cs-degree-2-years-later-and-what-i-4a7fd2ff5503/"
+
+
+Deciding What to learn: 
+  JavaScript, 
+    Eloquent Javascript: A Modern Introduction to Programming
+    DONT SKIP CODE EXERCISES 
+  HTML & CSS
+    Formal Education
+    Brad Traversy 20hr course, 
+    Sass/Less:
+      Coupled with HTML & CSS
+    ResponsiveDesign: 
+      Bootstrap & Media Queries, 
+  React: 
+    Component Based Front-End
+    Don't learn from Documentation, 
+  Design Patterns: 
+    dotnetcore web services, 
+    small examples, 
+  Git(Hub)
+
+  Courses: 
+    C#, Java 
+      Could've stuck with either, 
+  Introductory Courses: 
+    Quickly become too basic & not applied, 
+
+First Job: 
+  -Fear of Failure: 
+    self-conscience about methods
+  -Listening to others' advice bc I'm a Jr
+  “Libraries and Frameworks may become obsolete, but the concepts and solutions they propose often survive the test of time.”
+  What NOT to Learn: 
+    -You don't have to learn it all, 
+
+Going Further: 
+  CSS: 
+    SMACSS: https://smacss.com/
+    BEM: http://getbem.com/
+  React: 
+    Redux: CSS Tricks Leveling Up with React: Redux 
+      https://css-tricks.com/learning-react-redux/
+    
+  BackEnd: 
+    How I explained REST to my Wife, 
+      http://www.looah.com/source/view/2284
+    XSS Game: 
+      https://xss-game.appspot.com/
+    
+Discussion: 
+
+
+This week's discussion definitely touches close to home as I myself am taking on being a web developer in a non-traditional track- blessed by some formal coursework as well of course. I've been in support, and now as a helpdesk analyst I'm functioning as a bit of a hybrid between my support and development skills as they grow- requiring that I pick up courses online and from other resources to fill in the gaps as I put myself in a position to contribute at work or when I want to learn or harden a competency on my list of goals.
+
+
+    Deciding what to learn was indeed a tall task, and an ongoing one. The first word that I would say is that, once time is put in and a marketable technology is decided on to start learning, I would advise sticking with it at least until the first full example project is complete- get repetitions at programming on the keyboard and look for the patterns that will ultimately define the workflow for a type of solution. Along with that, I would just add that no matter what the coursework or learning path is- do ALL the examples. We can't hold our attention for every moment of every lesson, but if we're at least typing out the solutions and debugging every once in a while- and maybe taking a detour of curiosity with the example's implications or variations- then the learning will harden much faster. In short, JavaScript full stack development seemed expeditious due to the single language, and if I would've stayed on track, I would've actually finished the book we're doing for this semester about a year and a half ago when I first started it - back then I would skip an example or two, and got intimidated right before eslint was introduced to help with debugging.
+
+
+    When it comes to resources I love PacktPub.com, they curate their content, or they commission the creation of their own learning content- and they have a lot! There's an abundance of technology combinations when wanting to go learn something, and I've found the content to be very reputable with its professionalism by the instructors/authors and applicability to the industry. I do pay $10/month for the service, but even when it was $35/month a few years ago I got the subscription because I noticed the consistency with their instruction and reliability that I would be able to find any given technology I wanted to learn and generally a very recent publication date if not another title/video series coming soon.
+
+
+    I definitely identify with the article, and couldn't stop short of the end. I try to follow my training and ask questions, but also feel the intimidation as a Jr developer/Application Analyst too. This was a very encouraging excursion through the author's journey into web development, and I'm excited to push forward and continue writing my own story.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

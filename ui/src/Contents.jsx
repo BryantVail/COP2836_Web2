@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import IssueList from "./IssueList.jsx";
 // eslint-disable-next-line no-named-as-default-member
 import IssueReport from "./IssueReport.jsx";
+import IssueEdit from "./IssueEdit.jsx";
 
 //
 // end import
@@ -16,8 +17,10 @@ export default function Contents() {
   return (
     <Switch>
       <Redirect exact from="/" to="/issues" />
-      <Redirect path="/issues" component={IssueList} />
-      <Redirect path="/report" component={IssueReport} />
+      <Route path="/issues" component={IssueList} />
+      <Route path="/edit/:id" component={IssueEdit} />
+      <Route path="/report" component={IssueReport} />
+      {/* last element within the switch is a 'catch-all' */}
       <Route component={NotFound} />
     </Switch>
   );

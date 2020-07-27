@@ -72,7 +72,30 @@ npm install --save-dev webpack-dev-middleware@3
 
 npm install --save-dev webpack-hot-middleware@2
 
-npm install react-router-dom@4
+//
+// Branch: 09_React-Router
+//
+
+commands/packages: 
+  npm install react-router-dom@4
+  {
+    githubUrl: "https://github.com/ungap/url-search-params"
+    command: "npm install url-search-params@1",
+    libraryName: "url-search-params", 
+    notes: [
+      "this has been updated to a different package name",
+      "https://github.com/ungap/url-search-params"
+    ]
+  }
+
+CreateFiles: [
+  ui/src/
+    IssueReport.jsx
+    Contents.jsx 
+    Page.jsx 
+]
+
+
 
 
 
