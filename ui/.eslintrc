@@ -16,6 +16,7 @@
     "object-curly-spacing": "warn",
     "prefer-arrow-callback": "off",
     "quotes": "off",
-    "semi": "error"
+    "semi": "error",
+    "space-before-blocks": "off"
   }
 }

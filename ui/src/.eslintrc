@@ -28,11 +28,13 @@
     "no-multiple-empty-lines": "off",
     "no-param-reassign": "warn",
     "no-shadow": "warn",
+    "no-trailing-spaces": "off",
     "no-unused-vars": "warn",
     "no-use-before-define": "warn",
     "object-curly-spacing": "warn",
     "prefer-arrow-callback": "off",
     "quotes": "off",
-    "semi": "error"
+    "semi": "error",
+    "space-before-blocks": "off"
   }
 }
