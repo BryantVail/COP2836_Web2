@@ -39,5 +39,13 @@ async function add(_, { issue }) {
   return savedIssue;
 }
 
+// get function
+// eslint-disable-next-line no-unused-vars
+async function get(_, { id }) {
+  const db = getDb();
+  const issue = await db.collection('issues').findOne({ id });
+  return issue;
+}
 
-module.exports = { list, add };
+
+module.exports = { list, add, get };

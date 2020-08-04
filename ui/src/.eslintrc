@@ -19,10 +19,12 @@
     "react/prop-types": "off",
 
     "arrow-body-style": "off",
+    "class-methods-use-this": "off",
     "comma-dangle": "off",
     "consistent-return": "off",
     "eqeqeq": "off",
     "import/newline-after-import": "off",
+    "keyword-spacing": "off",
     "linebreak-style": "off",
     "max-len": "off",
     "no-multiple-empty-lines": "off",

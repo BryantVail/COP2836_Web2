@@ -76,17 +76,28 @@ npm install --save-dev webpack-hot-middleware@2
 // Branch: 09_React-Router
 //
 
-commands/packages: 
-  npm install react-router-dom@4
+commands/packages: [
   {
-    githubUrl: "https://github.com/ungap/url-search-params"
+    command: "npm install react-router-dom@4", 
+    notes: [
+      "download react-router-dom[@4],
+    ]
+  },
+  {
     command: "npm install url-search-params@1",
+    githubUrl: "https://github.com/ungap/url-search-params"
     libraryName: "url-search-params", 
     notes: [
       "this has been updated to a different package name",
       "https://github.com/ungap/url-search-params"
     ]
+  },
+  {
+    command: `"\Program Files\MongoDB\Server\4.2\bin\mongo.exe" {databaseName} init.mongo.js`,
+    desc: "update database with test data that has descriptions for the new view with 'description' field.", 
+    notes: []
   }
+],// end 'commands/packages' list
 
 CreateFiles: [
   ui/src/
@@ -94,6 +105,8 @@ CreateFiles: [
     Contents.jsx 
     Page.jsx 
 ]
+
+
 
 
 
