@@ -1,17 +1,13 @@
-// node_module packages
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-// user defined
-import IssueList from "./IssueList.jsx";
-// eslint-disable-next-line no-named-as-default-member
-import IssueReport from "./IssueReport.jsx";
-import IssueEdit from "./IssueEdit.jsx";
 
-//
-// end import
-//
+import React from 'react';
 
-const NotFound = () => <h1>Page Not found</h1>;
+import { Switch, Route, Redirect } from 'react-router-dom';
+
+import IssueList from './IssueList.jsx';
+import IssueReport from './IssueReport.jsx';
+import IssueEdit from './IssueEdit.jsx';
+
+const NotFound = () => <h1>Page Not Found</h1>;
 
 export default function Contents() {
   return (
@@ -20,7 +16,6 @@ export default function Contents() {
       <Route path="/issues" component={IssueList} />
       <Route path="/edit/:id" component={IssueEdit} />
       <Route path="/report" component={IssueReport} />
-      {/* last element within the switch is a 'catch-all' */}
       <Route component={NotFound} />
     </Switch>
   );

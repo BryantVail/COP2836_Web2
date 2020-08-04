@@ -1,10 +1,11 @@
+
 const path = require('path');
 
 module.exports = {
-  mode: "development",
-  entry: { app: ["./src/App.jsx"] },
+  mode: 'development',
+  entry: { app: ['./src/App.jsx'] },
   output: {
-    filename: "[name].bundle.js",
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public'),
     publicPath: '/',
   },
@@ -13,20 +14,15 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
-      }
-    ]
+        use: 'babel-loader',
+      },
+    ],
   },
   optimization: {
     splitChunks: {
-      name: "vendor",
-      chunks: 'all'
-    }
+      name: 'vendor',
+      chunks: 'all',
+    },
   },
   devtool: 'source-map'
 };
-
-
-
-
-

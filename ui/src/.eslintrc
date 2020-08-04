@@ -1,42 +1,10 @@
 {
-  "extends": "airbnb-base",
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 2017,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "classes": true,
-      "modules": true
+  "extends" : "airbnb-base",
+  "env" : {
+      "browser" : "true"
+    },
+  "rules" : {
+      "import/extensions": [ "error", "always", { "ignorePackages" : true } ],
+      "react/prop-types": "off"
     }
-  },
-  "rules": {
-    "import/extensions": ["error", "always", { "ignorePackages": true }],
-    "react/prop-types": "off",
-
-    "arrow-body-style": "off",
-    "class-methods-use-this": "off",
-    "comma-dangle": "off",
-    "consistent-return": "off",
-    "eqeqeq": "off",
-    "import/newline-after-import": "off",
-    "keyword-spacing": "off",
-    "linebreak-style": "off",
-    "max-len": "off",
-    "no-multiple-empty-lines": "off",
-    "no-param-reassign": "warn",
-    "no-shadow": "warn",
-    "no-trailing-spaces": "off",
-    "no-unused-vars": "warn",
-    "no-use-before-define": "warn",
-    "object-curly-spacing": "warn",
-    "prefer-arrow-callback": "off",
-    "quotes": "off",
-    "semi": "error",
-    "space-before-blocks": "off"
-  }
 }
